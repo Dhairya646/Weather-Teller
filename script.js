@@ -12,8 +12,10 @@ async function showWeather() {
     if (response.ok && !data.error) {
         document.getElementById("result").innerHTML = `
             <h2>${data.location.name}, ${data.location.country}</h2>
+            <h3>${data.location.tz_id}</h3>
             <p>Temperature: ${data.current.temp_c}°C</p>
             <p>Condition: ${data.current.condition.text}</p>
+            
         `;
     } else {
         document.getElementById("result").innerHTML = `
